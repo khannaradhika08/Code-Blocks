@@ -1,42 +1,34 @@
 #include <iostream>
-#include <string>
-using namespace std;
-class numbers
-{
-    int a;
-public:
-    void read_num();
-    int cube_num();
-    int sq_num();
-    void display_num();
-};
 
-void numbers :: read_num()
-{
-    cout<<"Enter a number: "<<endl;
-    cin>>a;
+using namespace std;
+class Student{
+private:
+    int classofstudent;
+    int salaryofparents;
+public:
+    int rollnumber;
+    string name;
+    void set_data(int classofstudent1, int salaryofparents1);
+    void get_data();
+};
+void Student::set_data(int classofstudent1, int salaryofparents1){
+classofstudent=classofstudent1;
+salaryofparents=salaryofparents1;
 }
-int numbers :: cube_num()
-{
-    return a*a*a;
-}
-int numbers :: sq_num()
-{
-    return a*a;
-}
-void numbers :: display_num()
-{
-    int sq;
-    int cube;
-    sq=sq_num();
-    cube=cube_num();
-    cout<<"the square of the number is: "<<sq<<endl;
-    cout<<"the cube of the number is: "<<cube<<endl;
+
+void Student :: get_data(){
+cout<<"the class of the student is "<<classofstudent<<endl;
+cout<<"the salary of the parents of the student is "<<salaryofparents<<endl;
+cout<<"the name of the student is "<<name<<endl;
+cout<<"the roll number of the student is "<<rollnumber<<endl;
 }
 int main()
 {
-    numbers n;
-    n.read_num();
-    n.display_num();
+    Student rads;
+    rads.rollnumber=23;
+    rads.name="Radhika";
+    rads.set_data(9,5000);
+    rads.get_data();
+
     return 0;
 }
